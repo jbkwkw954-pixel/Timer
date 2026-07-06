@@ -217,42 +217,6 @@
     backdrop-filter:blur(6px);
     margin-top:8px;
   }
-  #console h3{
-    margin:0 0 12px;
-    font-family:'Orbitron',sans-serif;
-    font-size:12px;
-    letter-spacing:3px;
-    color:var(--neon-pink);
-    text-shadow:0 0 8px var(--neon-pink);
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  #console h3 .lock-ico{font-size:14px;}
-
-  .field-row{
-    display:flex;
-    gap:10px;
-    margin-bottom:10px;
-  }
-  .field-row input[type="password"],
-  .field-row input[type="text"]{
-    flex:1;
-    background:rgba(0,0,0,0.4);
-    border:1px solid rgba(0,255,242,0.3);
-    color:var(--neon-cyan);
-    font-family:'Share Tech Mono',monospace;
-    font-size:14px;
-    letter-spacing:2px;
-    padding:10px 12px;
-    border-radius:8px;
-    outline:none;
-  }
-  .field-row input::placeholder{color:rgba(216,251,255,0.35);}
-  .field-row input:focus{
-    border-color:var(--neon-cyan);
-    box-shadow:0 0 12px rgba(0,255,242,0.5);
-  }
 
   .btn{
     font-family:'Orbitron',sans-serif;
@@ -274,102 +238,6 @@
     box-shadow:0 0 18px var(--neon-cyan);
   }
   .btn:active{transform:scale(0.96);}
-  .btn.pink{border-color:var(--neon-pink);color:var(--neon-pink);background:rgba(255,43,214,0.08);}
-  .btn.pink:hover{background:var(--neon-pink);color:#210012;box-shadow:0 0 18px var(--neon-pink);}
-  .btn.green{border-color:var(--neon-green);color:var(--neon-green);background:rgba(57,255,136,0.08);}
-  .btn.green:hover{background:var(--neon-green);color:#001a0a;box-shadow:0 0 18px var(--neon-green);}
-
-  .hms-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:8px;
-    margin-bottom:10px;
-  }
-  .hms-grid label{
-    font-size:9px;
-    letter-spacing:2px;
-    color:#8ee9ff;
-    display:block;
-    margin-bottom:4px;
-    text-align:center;
-  }
-  .hms-grid input[type="number"]{
-    width:100%;
-    background:rgba(0,0,0,0.4);
-    border:1px solid rgba(155,48,255,0.4);
-    color:#fff;
-    font-family:'Orbitron',sans-serif;
-    font-size:16px;
-    text-align:center;
-    padding:8px 4px;
-    border-radius:8px;
-    outline:none;
-  }
-  .hms-grid input:focus{border-color:var(--neon-purple);box-shadow:0 0 10px rgba(155,48,255,0.6);}
-
-  .label-input{
-    margin-bottom:10px;
-  }
-  .label-input label{
-    font-size:9px;
-    letter-spacing:2px;
-    color:#8ee9ff;
-    display:block;
-    margin-bottom:4px;
-  }
-  .label-input input{
-    width:100%;
-    background:rgba(0,0,0,0.4);
-    border:1px solid rgba(0,255,242,0.3);
-    color:#fff;
-    font-family:'Share Tech Mono',monospace;
-    font-size:13px;
-    padding:9px 12px;
-    border-radius:8px;
-    outline:none;
-  }
-
-  .actions-row{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-  }
-  .actions-row .btn{flex:1;}
-
-  #msg{
-    margin-top:8px;
-    font-size:11px;
-    letter-spacing:1px;
-    min-height:16px;
-    text-align:center;
-  }
-  #msg.err{color:#ff5c7a;text-shadow:0 0 8px #ff5c7a;}
-  #msg.ok{color:var(--neon-green);text-shadow:0 0 8px var(--neon-green);}
-
-  #lockedNote{
-    font-size:10.5px;
-    color:rgba(216,251,255,0.4);
-    text-align:center;
-    letter-spacing:1px;
-    margin-top:4px;
-    max-width:320px;
-  }
-
-  .comic-badge{
-    position:absolute;
-    top:10px;
-    right:10px;
-    z-index:3;
-    font-family:'Orbitron',sans-serif;
-    font-size:9px;
-    letter-spacing:1px;
-    color:#04030c;
-    background:var(--neon-amber);
-    padding:4px 9px;
-    border-radius:4px;
-    transform:rotate(6deg);
-    box-shadow:0 0 12px rgba(255,176,32,0.7);
-  }
 
   #expiredBurst{
     display:none;
@@ -387,7 +255,6 @@
 
   @media (prefers-reduced-motion: reduce){
     #hexRotor{animation:none;}
-    .comic-badge{transform:none;}
     #expiredBurst{animation:none;}
     .brand .dot{animation:none;}
   }
@@ -595,10 +462,7 @@
       <div class="portal-note">Conduct Your Test</div>
     </div>
 
-    
-        <div id="msg2" style="margin-top:8px;font-size:11px;text-align:center;color:var(--neon-green);"></div>
-      </div>
-    </div>
+    <div id="msg2" style="margin-top:8px;font-size:11px;text-align:center;color:var(--neon-green);"></div>
   </div>
 </div>
 
@@ -608,12 +472,12 @@
   const PORTAL_URL = "https://jbkwkw954-pixel.github.io/examportal";
 
   // --- AUTOMATIC TARGET FIXED DATE CODE ---
-  // JavaScript me Month index 0 se shuru hota hai (0=Jan, 1=Feb... 6=July)
-  // Target: 6 July 2026 at 8:30:00 AM
-  const TARGET_TIME = new Date(2026, 6, 6, 8, 30, 0).getTime(); 
+  // Target: 13 July 2026 at 8:30:00 AM
+  // JavaScript me Month index 0 se shuru hota hai (0=Jan, 6=July)
+  const TARGET_TIME = new Date(2026, 6, 13, 8, 30, 0).getTime(); 
   
-  // Progress Ring ki animation ke liye total time frame (e.g. 4 July ki shaam se lekar 6 July subah tak ka total duration)
-  const TOTAL_DURATION = TARGET_TIME - new Date(2026, 6, 4, 19, 0, 0).getTime(); 
+  // Total duration dynamically set based on now till the target date for perfect circle animation
+  const TOTAL_DURATION = TARGET_TIME - Date.now(); 
 
   const digitsEl = document.getElementById('digits');
   const statusEl = document.getElementById('statusLabel');
@@ -640,7 +504,7 @@
     const now = Date.now();
     const remainMs = TARGET_TIME - now;
 
-    // Jab time khatam ho jaye (Monday 8:30 AM par)
+    // Jab time khatam ho jaye (13 July 8:30 AM par)
     if(remainMs <= 0){
       digitsEl.textContent = "00:00:00";
       statusEl.textContent = "EXAM PORTAL READY";
@@ -676,54 +540,6 @@
 
   // Timer ko auto-start kar rahe hain
   startTicking();
-
-  // Admin Panel Inputs (Inko ab manually cherne ki zaroorat nahi, yeh auto-mode par hain)
-  const passInput = document.getElementById('passInput');
-  const unlockBtn = document.getElementById('unlockBtn');
-  const msg = document.getElementById('msg');
-  const lockPanel = document.getElementById('lockPanel');
-  const controlPanel = document.getElementById('controlPanel');
-  const lockBtn = document.getElementById('lockBtn');
-  const startBtn = document.getElementById('startBtn');
-  const resetBtn = document.getElementById('resetBtn');
-  const msg2 = document.getElementById('msg2');
-  const hIn = document.getElementById('hIn');
-  const mIn = document.getElementById('mIn');
-  const sIn = document.getElementById('sIn');
-  const eventLabel = document.getElementById('eventLabel');
-
-  function tryUnlock(){
-    if(passInput.value === OWNER_KEY){
-      lockPanel.style.display = 'none';
-      controlPanel.style.display = 'block';
-      msg.textContent = '';
-      msg.className = '';
-      passInput.value = '';
-    } else {
-      msg.textContent = 'ACCESS DENIED — GALAT KEY';
-      msg.className = 'err';
-      passInput.value = '';
-    }
-  }
-  unlockBtn.addEventListener('click', tryUnlock);
-  passInput.addEventListener('keydown', function(e){
-    if(e.key === 'Enter') tryUnlock();
-  });
-
-  lockBtn.addEventListener('click', function(){
-    controlPanel.style.display = 'none';
-    lockPanel.style.display = 'block';
-  });
-
-  startBtn.addEventListener('click', function(){
-    msg2.textContent = 'Timer is running automatically via Code.';
-    msg2.style.color = 'var(--neon-green)';
-  });
-
-  resetBtn.addEventListener('click', function(){
-    msg2.textContent = 'Reset locked (Auto-Temporal Mode Active)';
-    msg2.style.color = 'var(--neon-pink)';
-  });
 
   // --- Particles Background Animation ---
   const pCanvas = document.getElementById('particles');
@@ -816,8 +632,6 @@
   resizeRain();
   animateRain();
 })();
-
-
 </script>
 </body>
 </html>
